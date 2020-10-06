@@ -19,4 +19,4 @@ namespace API.Controllers
             return await this.mediator.Send(new List.Query());
         }
     }
-}
+} 
