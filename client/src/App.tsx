@@ -36,19 +36,19 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            BlogBox
-          </header>
-          <main>
-            <Switch>
-              <Route exact path="/">
-                <PostList post={posts} clickPost={this.viewPost} />
-              </Route>
-              <Route exact path="/posts/:postId">
-                <Post post={post} />
-              </Route>
-            </Switch>
-          </main>
+              <header className="App-header">
+                BlogBox
+              </header>
+              <main className="App-content">
+                <Switch>
+                  <Route exact path="/">
+                    <PostList posts={posts} clickPost={this.viewPost} />
+                  </Route>
+                  <Route exact path="/posts/:postId">
+                    <Post post={post} />
+                  </Route>
+                </Switch>
+              </main>
         </div>
       </Router>
     );
