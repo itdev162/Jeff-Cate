@@ -106,7 +106,7 @@ namespace API.Controllers
 
             if (post == null)
             {
-                throw new Exception("CouldN not find post.");
+                throw new Exception("Could not find post.");
             }
             
             context.Remove(post);

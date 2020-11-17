@@ -10,6 +10,7 @@ const EditPost = ({ post, onPostUpdated }) => {
         title: post.title,
         body: post.body
     });
+    
     const { title, body } = postData;
 
     const onChange = e => {
@@ -19,7 +20,7 @@ const EditPost = ({ post, onPostUpdated }) => {
             ...postData,
             [name]: value
         });
-    };
+    }
 
     const update = async () => {
         if (!title || !body){
@@ -35,7 +36,7 @@ const EditPost = ({ post, onPostUpdated }) => {
             try {
                 const config = {
                     headers: {
-                        'Content-Type': 'application/json'
+                        "Content-Type": "application/json"
                     }
                 };
 
@@ -49,12 +50,12 @@ const EditPost = ({ post, onPostUpdated }) => {
 
                 // Call the handler nad redirect
                 onPostUpdated(res.data);
-                history.push('/');
+                history.push("/");
             } catch (error) {
                 console.error(`Error creating post: ${error.response.data}`);
             }
         }
-    };
+    }
 
     return (
         <div className="form-container">
@@ -71,11 +72,10 @@ const EditPost = ({ post, onPostUpdated }) => {
                 cols="30"
                 rows="10"
                 value={body}
-                onChange={e => onChange(e)}
-            ></textarea>
+                onChange={e => onChange(e)}></textarea>
             <button onClick={() => update()}>Submit</button> 
         </div>
     );
-} ;
+}
 
 export default EditPost;
